@@ -1,0 +1,476 @@
+/* ---------- DASHBOARD CONTAINER ---------- */
+.dashboardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  background-color: var(--color-background-light);
+}
+
+/* ---------- SUMMARY CARDS ---------- */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-light);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: clamp(13rem, 24vw, 15rem);
+  min-height: 4.5rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.cardTitle {
+  margin: 0 0 4px 0;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.cardValue {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.8vw, 1.7rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.cardIcon {
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  color: var(--color-primary);
+  padding: 0.6rem;
+  border-radius: var(--border-radius-round);
+  background-color: var(--color-background-light);
+}
+
+/* ---------- RECENT PROJECTS HEADER ---------- */
+.recentProjectsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(0.75rem, 4vw, 1.5rem) clamp(1rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.recentProjectsTitle {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.viewAllButton {
+  padding: var(--button-padding-md);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-small);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.viewAllButton:hover {
+  box-shadow: var(--shadow-light);
+  transform: translateY(-2px);
+  color: var(--color-primary);
+}
+
+/* ---------- PROJECT LIST ---------- */
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  justify-items: center;
+}
+
+.projectListDormant {
+  padding: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  color: var(--color-text-secondary);
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ---------- PROJECT CARD ---------- */
+.projectCard {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  width: 100%;
+  max-width: 23rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-deep);
+}
+
+.projectCardActive {
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-deep);
+}
+
+.projectCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.projectCardTitle {
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.projectCardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.projectStatus {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  font-weight: 500;
+}
+
+.deleteButton {
+  border: none;
+  background: transparent;
+  color: var(--color-error);
+  padding: 0.35rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.deleteButton:hover {
+  background-color: rgba(220, 53, 69, 0.12);
+  color: var(--color-error);
+  transform: scale(1.05);
+}
+
+.deleteButton:focus-visible {
+  outline: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
+.projectDescription {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: var(--color-text-secondary);
+  margin: 0.4rem 0 1rem;
+}
+
+/* ---------- PROJECT DETAILS ---------- */
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: var(--color-text-primary);
+}
+
+.projectDetailRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectDetailLabel {
+  color: var(--color-text-secondary);
+}
+
+.projectDetailValue {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.projectCardDivider {
+  margin: 1rem 0;
+  border-color: var(--color-border);
+}
+
+/* ---------- CARD ACTIONS ---------- */
+.projectCardActions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.actionButton,
+.executeButton {
+  flex: 1;
+  padding: var(--button-padding-sm);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  border-radius: var(--border-radius-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+}
+
+.actionButton:hover {
+  box-shadow: var(--shadow-light);
+  transform: translateY(-2px);
+  color: var(--color-primary);
+}
+
+.executeButton {
+  border: none;
+  background: var(--gradient-button-secondary);
+  color: var(--color-white);
+}
+
+.executeButton:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+.projectInlineLoading {
+  margin-top: 0.6rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.projectConfiguration {
+  margin-top: clamp(0.8rem, 2.5vw, 1.2rem);
+  padding: clamp(0.75rem, 2.5vw, 1.2rem);
+  background-color: var(--color-background-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-medium);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 2vw, 0.9rem);
+}
+
+.projectConfiguration h3 {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.projectConfigurationSubheading {
+  margin: 0;
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.projectConfigurationList,
+.projectConfigurationPaths {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+}
+
+.projectConfigurationList li,
+.projectConfigurationPaths li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.45rem;
+}
+
+.projectConfigurationList li:last-child,
+.projectConfigurationPaths li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.projectConfigurationList span,
+.projectConfigurationPaths span {
+  color: var(--color-text-secondary);
+}
+
+.projectConfigurationList strong,
+.projectConfigurationPaths strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-align: right;
+}
+
+.projectConfigurationLoading {
+  margin: 0;
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ---------- RESPONSIVENESS ---------- */
+@media (max-width: 1024px) {
+  .recentProjectsHeader {
+    padding: 1.2rem 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 85%;
+  }
+
+  .recentProjectsHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .projectList {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    padding: 0.9rem 1.2rem;
+  }
+
+  .cardIcon {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+  }
+
+  .projectCard {
+    padding: 0.9rem;
+    max-width: 100%;
+  }
+
+  .recentProjectsTitle {
+    font-size: 1.1rem;
+  }
+
+  .viewAllButton {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* ---------- WORKFLOW CARDS ---------- */
+.workflowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem clamp(1rem, 6vw, 4rem);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.workflowCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: var(--color-background-light);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  width: clamp(10rem, 18vw, 12rem);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.workflowCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.workflowCard i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.workflowCard:hover i {
+  color: inherit;
+}
+
+.workflowCard span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  transition: color 0.3s ease;
+}
+
+.workflowCard:hover span {
+  color: inherit;
+}
+
+.workflowStartButton {
+  background: var(--gradient-button-secondary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--button-padding-sm);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: var(--transition-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  width: 80%; /* Adjust as needed */
+  font-size: 0.9rem;
+}
+
+.workflowStartButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.workflowStartButton i {
+  color: var(--color-white); /* Ensure icon color is white */
+  font-size: 0.9rem;
+}

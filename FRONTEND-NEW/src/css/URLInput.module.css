@@ -1,0 +1,218 @@
+.urlInputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+  background-color: var(--color-background-light);
+  padding-top: 1rem;
+  padding-bottom: 20px;
+}
+
+.contentBox {
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--color-border);
+  min-height: 40vh;
+  width: 65vw;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-light);
+}
+
+.title {
+  font-size: 22px;
+  color: var(--color-text-primary);
+}
+
+.urlInput {
+  padding: 0.7rem;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-medium);
+  margin-top: 8px;
+  transition: var(--transition-form-elements);
+}
+
+.urlInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(91, 75, 234, 0.2);
+  outline: none;
+}
+
+.errorText {
+  color: var(--color-error);
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.enrichButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 0.8rem;
+}
+
+.enrichButton {
+  padding: var(--button-padding-lg);
+  font-size: 15px;
+  background: var(--gradient-button-secondary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: var(--transition-button);
+  min-width: 150px;
+  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enrichButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.refreshButton {
+  padding: var(--button-padding-lg);
+  font-size: 15px;
+  background: var(--gradient-button);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: var(--transition-button);
+  min-width: 180px;
+  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refreshButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.refreshButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.testCaseOutput {
+  margin-top: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-medium);
+  padding: 15px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+}
+
+.testCaseOutputTitle {
+  color: var(--color-text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 5px;
+}
+
+.jsonPre {
+  background-color: #1e1e1e;
+  color: #00ff00;
+  padding: 10px;
+  border-radius: var(--border-radius-medium);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.navigationButtons {
+  width: 65vw;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navButton {
+  padding: var(--button-padding-lg);
+  font-size: 15px;
+  background: var(--color-gray);
+  color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: var(--transition-button);
+  min-width: 130px;
+  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navButton:hover {
+  background-color: var(--color-gray-dark);
+  transform: translateY(-2px);
+}
+
+.navButton i {
+  margin-right: 8px;
+}
+
+.navButton.next i {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.next {
+  background: var(--gradient-button);
+}
+
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+@media (max-width: 768px) {
+  .contentBox {
+    width: 80vw;
+    padding: 1rem 1.5rem;
+  }
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .navigationButtons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .navButton {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentBox {
+    width: 90vw;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .urlInput {
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+
+  .enrichButton,
+  .navButton {
+    font-size: 14px;
+    padding: 0.5rem 1.2rem;
+    min-height: 36px;
+  }
+}
