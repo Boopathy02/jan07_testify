@@ -1,0 +1,22 @@
+# Example GitLab CI snippet for ingesting Allure JSON results into DuckDB history
+# Save this file or copy the job into your project's .gitlab-ci.yml
+
+stages:
+  - test
+  - ingest
+
+ingest_allure_history:
+  stage: ingest
+  image: python:3.11-slim
+  variables:
+    PIP_NO_CACHE_DIR: 'off'
+  before_script:
+    - pip install --no-cache-dir duckdb pandas
+  script:
+    - python backend/allure_to_duckdb.py --allure-glob "allure-results/*-result.json" --db-path "allure_history.duckdb" --run-id "$CI_PIPELINE_ID" --build-id "$CI_COMMIT_SHA" --upsert
+  artifacts:
+    paths:
+      - allure_history.duckdb
+    expire_in: 1 week
+  only:
+    - branches

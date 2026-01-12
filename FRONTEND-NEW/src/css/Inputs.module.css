@@ -1,0 +1,207 @@
+.inputContainer {
+  background-color: var(--color-background-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbarBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.navbarIcon {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  padding: 0.6rem;
+  border-radius: 15%;
+  font-size: 0.9rem;
+}
+
+.navbarTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.navbarSubtitle {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- BACK BUTTON ---------- */
+.backButton {
+  padding: var(--button-padding-md);
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition-button);
+}
+
+.backButton:hover {
+  box-shadow: var(--shadow-light);
+  transform: translateY(-2px);
+}
+
+/* ---------- TITLE ---------- */
+.wizardTitle {
+  padding: 1.2rem 8vw 0.8rem;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--color-text-primary);
+  text-align: left;
+  font-weight: 600;
+}
+
+/* ---------- STEP CONTAINER ---------- */
+.stepContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem 8vw;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  flex: 1 1 240px;
+  min-width: 220px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-light);
+  padding: 1rem;
+  transition: var(--transition-button);
+}
+
+.stepItem:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ---------- STEP ICONS ---------- */
+.stepIconContainer {
+  background-color: var(--color-border);
+  padding: 0.5rem;
+  border-radius: var(--border-radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 48px;
+}
+
+.stepIcon {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* ---------- STEP TEXT ---------- */
+.stepTextContainer h2 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.stepTextContainer p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+}
+
+/* ---------- RESPONSIVENESS ---------- */
+@media (max-width: 1024px) {
+  .wizardTitle {
+    padding: 1rem 6vw 0.8rem;
+  }
+
+  .stepContainer {
+    padding: 1rem 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .navbarBrand {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .backButton {
+    align-self: flex-end;
+    width: auto;
+    margin-top: 0.3rem;
+  }
+
+  .wizardTitle {
+    text-align: center;
+    padding: 1rem 5vw;
+  }
+
+  .stepItem {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.9rem;
+  }
+
+  .stepIconContainer {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbarTitle {
+    font-size: 1rem;
+  }
+
+  .navbarSubtitle {
+    font-size: 0.65rem;
+  }
+
+  .backButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .wizardTitle {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .stepTextContainer h2 {
+    font-size: 0.9rem;
+  }
+
+  .stepTextContainer p {
+    font-size: 0.75rem;
+  }
+}
